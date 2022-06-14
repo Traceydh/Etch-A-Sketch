@@ -8,9 +8,11 @@ for (let i = 0; i < 16; i ++) {
     const gridCol = document.createElement('div');
     //Append newly created grid element to the container div in HTML file 
     container.append(gridCol);
-    //create row with 16 divs 
-    for (let j = 0; j < 16; j ++) {
-        const gridRow = document.createElement('div');
-        container.append(gridRow);
-    }
+    gridCol.textContent = i + 1;
+        //create row with 16 divs 
+        for (let j = 0; j < 15; j ++) {
+            const gridRow = document.createElement('div');
+            container.append(gridRow);
+            gridRow.textContent = j + 1;
+        }
 }

@@ -1,10 +1,12 @@
-div {
+.container div {
     height: 30px;
     width: 30px;
-    border: solid;
     background-color: red;
+    border: solid;
 }
 
 .container {
-
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
