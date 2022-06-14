@@ -1,12 +1,13 @@
 .container div {
     height: 30px;
     width: 30px;
-    background-color: red;
+    background-color: bisque;
     border: solid;
 }
 
 .container {
+    width: 480px;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr); 
 }
