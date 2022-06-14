@@ -8,7 +8,7 @@ for (let i = 0; i < 256; i ++) {
     grid = document.createElement('div');
     //add attribute 
     grid.id = i + 1;
-    //when hovering change color 
+    //when mouse hovers over a div, change it's background color 
     grid.addEventListener('mouseover', changeColor);
     //Append newly created grid element to the container div in HTML file 
     container.append(grid);
@@ -17,6 +17,17 @@ for (let i = 0; i < 256; i ++) {
 //change color of grid when mouse is hovering over 
 function changeColor() {
     this.style.backgroundColor = 'salmon';
-
 }
+
+//perform popup when button is clicked 
+const btn = document.querySelector('#btn');
+btn.onclick = popUp; 
+//popup function ask user for input 
+function popUp () {
+   let size = prompt("Enter size of grid: ", "16");
+   console.log(size);
+}
+//userInput should replace i, to remake the grid 
+//remake new grid 
+//set user input max=100
 
