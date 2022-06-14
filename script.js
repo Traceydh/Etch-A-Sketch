@@ -16,7 +16,7 @@ btn.onclick = popUp;
 function popUp () {
    let size = prompt("Enter size of grid: ", "16");
    //use for loop to repeat 16x16=256 times
-   for (let i = 0; i < size; i ++) {
+   for (let i = 0; i < (size * size); i ++) {
     //create element in memory for the div 
     grid = document.createElement('div');
     //add attribute 
