@@ -20,8 +20,3 @@ function changeColor() {
 
 }
 
-//change color of background logic testing
-const button = document.querySelector(".btn"); 
-button.addEventListener("click", () => {
-    button.style.backgroundColor = 'salmon';
-})
