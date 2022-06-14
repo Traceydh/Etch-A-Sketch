@@ -3,8 +3,14 @@
 const container = document.querySelector('.container');
 //use for loop to repeat 16 times 
 for (let i = 0; i < 16; i ++) {
+    //create column with 16 divs 
     //create element in memory for the div 
-    const grid = document.createElement('div');
+    const gridCol = document.createElement('div');
     //Append newly created grid element to the container div in HTML file 
-    container.append(grid);
+    container.append(gridCol);
+    //create row with 16 divs 
+    for (let j = 0; j < 16; j ++) {
+        const gridRow = document.createElement('div');
+        container.append(gridRow);
+    }
 }
