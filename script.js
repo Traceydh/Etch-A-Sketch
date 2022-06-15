@@ -10,11 +10,12 @@ const resizeButton = document.querySelector('.resize-btn');
 resizeButton.onclick = resize; 
 //reset color of grid when button is clicked 
 const resetButton = document.querySelector('.reset-btn');
-resetButton.onlick = reset; 
+resetButton.onclick = reset; 
 
 //FUNCTION reset color of grid 
 function reset () {
-    
+    let grid = container.querySelectorAll('div');
+    grid.forEach((div) => div.style.backgroundColor = color);
 }
 
 //FUNCTION reset size of grid depending on input
