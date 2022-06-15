@@ -13,12 +13,6 @@ const resetButton = document.querySelector('.reset-btn');
 resetButton.onclick = reset; 
 //When press, color of mouse changes with each hover 
 const randomColorButton = document.querySelector('.color-btn')
-randomColorButton.onclick = randomColor; 
-
-//FUNCTION random color function 
-function randomColor () {
-    console.log(color);
-}
 
 //FUNCTION reset color of grid 
 function reset () {
@@ -49,10 +43,10 @@ function drawGrid (size) {
     for (let i = 0; i < size*size; i ++) {
         //create element in memory for the div 
         let grid = document.createElement('div');
-        grid.style.backgroundColor = color;
+        grid.style.backgroundColor = color
         //Append newly created grid element to the container div in HTML file 
         container.append(grid);
         //when mouse hovers over a div, change it's background color 
         grid.addEventListener('mouseover', changeColor);
-}
+    }
 }
