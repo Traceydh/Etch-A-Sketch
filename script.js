@@ -3,9 +3,10 @@
 const container = document.querySelector('.container');
 let grid = drawGrid(16);
 
-//perform popup when button is clicked 
+//resize grid when button is clicked 
 const resizeButton = document.querySelector('.resize-btn');
 resizeButton.onclick = resize; 
+//reset color of grid when button is clicked 
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onlick = reset; 
 
@@ -14,10 +15,11 @@ function reset () {
     gridList.forEach(grid => grid.style.backgroundColor = 'black');
 }
 
-//FUNCTION pop up asking for user input to restart grid 
+//FUNCTION reset size of grid depending on input
 function resize () {
     const size = document.querySelector('#resize');
     drawGrid(size.value);
+    size.value = '';
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
