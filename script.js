@@ -1,11 +1,11 @@
 //create a webpage with 16x16 grid of square divs 
 //Select container element from HTML file 
 const container = document.querySelector('.container');
-let grid = drawGrid(4);
+let grid = drawGrid(16);
 
 //perform popup when button is clicked 
 const resizeButton = document.querySelector('.resize-btn');
-resizeButton.onclick = popUp; 
+resizeButton.onclick = resize; 
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onlick = reset; 
 
@@ -15,13 +15,10 @@ function reset () {
 }
 
 //FUNCTION pop up asking for user input to restart grid 
-function popUp () {
-
-    let size = prompt("Enter size of grid: ", "16");
-    if (size >= 100) {
-        return;
-    }
-    drawGrid(size);
+function resize () {
+    const size = document.querySelector('#resize');
+    console.log (size.value);
+    //rawGrid(size);
 }
 
 //FUNCTION change color of grid when mouse is hovering over 

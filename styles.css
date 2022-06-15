@@ -1,12 +1,10 @@
-
-
 .container {
     width: 500px;
     height: 500px;
     display: grid;
 }
 
-.btn {
-    margin: 50px auto;
+.btn{
+    display: inline;
 }
 
