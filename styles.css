@@ -1,17 +1,12 @@
-.container div {
-    height: 30px;
-    width: 30px;
-    background-color: black;
-    border: solid;
-}
+
 
 .container {
-    width: 480px;
+    width: 500px;
+    height: 500px;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr); 
 }
 
 .btn {
     margin: 50px auto;
 }
+
