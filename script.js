@@ -51,6 +51,10 @@ function randomColor() {
 
 //FUNCTION draw and color grid 
 function drawGrid (size) {
+    if (size < 1 ) {
+        alert('Please enter a size between 1 to 100');
+        return;
+    }
     //Column and row sizing
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
