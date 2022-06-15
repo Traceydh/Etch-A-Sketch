@@ -2,7 +2,8 @@
 //Select container element from HTML file 
 const container = document.querySelector('.container');
 //set color of grid as variable 
-const color = 'black';
+let paintColor = 'salmon';
+let backgroundColor = 'black';
 drawGrid(16);
 
 //resize grid when button is clicked 
@@ -11,25 +12,44 @@ resizeButton.onclick = resize;
 //reset color of grid when button is clicked 
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onclick = reset; 
-//When press, color of mouse changes with each hover 
+//Change paint color 
 const randomColorButton = document.querySelector('.color-btn')
+randomColorButton.onclick = randomColor; 
+//Wchange to rainbow paint color
+const rainbowColorButton = document.querySelector('.color-btn')
+rainbowColorButton.onclick = rainbowColor; 
+
 
 //FUNCTION reset color of grid 
 function reset () {
     let grid = container.querySelectorAll('div');
-    grid.forEach((div) => div.style.backgroundColor = color);
+    grid.forEach((div) => div.style.backgroundColor = backgroundColor);
 }
 
 //FUNCTION reset size of grid depending on input
 function resize () {
     const size = document.querySelector('#resize');
-    drawGrid(size.value);
-    size.value = '';
+    if (size.value >= 1 || size.value <= 100) {
+        drawGrid(size.value);
+        size.value = '';
+    } else {
+        alert('enter a size between 1 to 100');
+        return;
+    }
+    console.log(size.value);
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
 function changeColor() {
-    this.style.backgroundColor = 'salmon';
+    this.style.backgroundColor = paintColor;
+}
+
+//FUNCTION new paint color 
+function rainbowColor() {
+    let num = Math.floor((Math.random()*255));
+    let num2 = Math.floor((Math.random()*255));
+    let num3 = Math.floor((Math.random()*255));
+    paintColor = `rgb(${num}, ${num2}, ${num3})`;
 }
 
 //FUNCTION draw and color grid 
@@ -43,7 +63,7 @@ function drawGrid (size) {
     for (let i = 0; i < size*size; i ++) {
         //create element in memory for the div 
         let grid = document.createElement('div');
-        grid.style.backgroundColor = color
+        grid.style.backgroundColor = backgroundColor;
         //Append newly created grid element to the container div in HTML file 
         container.append(grid);
         //when mouse hovers over a div, change it's background color 
