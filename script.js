@@ -1,7 +1,9 @@
 //create a webpage with 16x16 grid of square divs 
 //Select container element from HTML file 
 const container = document.querySelector('.container');
-let grid = drawGrid(16);
+//set color of grid as variable 
+const color = 'black';
+drawGrid(16);
 
 //resize grid when button is clicked 
 const resizeButton = document.querySelector('.resize-btn');
@@ -12,7 +14,7 @@ resetButton.onlick = reset;
 
 //FUNCTION reset color of grid 
 function reset () {
-    gridList.forEach(grid => grid.style.backgroundColor = 'black');
+    
 }
 
 //FUNCTION reset size of grid depending on input
@@ -29,13 +31,16 @@ function changeColor() {
 
 //FUNCTION draw and color grid 
 function drawGrid (size) {
+    //Column and row sizing
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    //Remove previous grid colors
+    let grid = container.querySelectorAll('div');
+    grid.forEach((div) => div.remove());
     for (let i = 0; i < size*size; i ++) {
-        //Column and row sizing
-        container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
         //create element in memory for the div 
         let grid = document.createElement('div');
-        grid.style.backgroundColor = "black";
+        grid.style.backgroundColor = color;
         //Append newly created grid element to the container div in HTML file 
         container.append(grid);
         //when mouse hovers over a div, change it's background color 
