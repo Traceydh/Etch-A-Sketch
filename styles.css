@@ -4,7 +4,9 @@
     display: grid;
 }
 
-.btn{
-    display: inline;
+.container div {
+    border: solid;
+    border-color: aliceblue;
+    border-width: 0.5px;
 }
 

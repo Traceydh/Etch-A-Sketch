@@ -11,6 +11,14 @@ resizeButton.onclick = resize;
 //reset color of grid when button is clicked 
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onclick = reset; 
+//When press, color of mouse changes with each hover 
+const randomColorButton = document.querySelector('.color-btn')
+randomColorButton.onclick = randomColor; 
+
+//FUNCTION random color function 
+function randomColor () {
+    console.log(color);
+}
 
 //FUNCTION reset color of grid 
 function reset () {
