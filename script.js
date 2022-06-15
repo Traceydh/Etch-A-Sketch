@@ -15,9 +15,6 @@ resetButton.onclick = reset;
 //Change paint color 
 const randomColorButton = document.querySelector('.color-btn')
 randomColorButton.onclick = randomColor; 
-//Wchange to rainbow paint color
-const rainbowColorButton = document.querySelector('.color-btn')
-rainbowColorButton.onclick = rainbowColor; 
 
 
 //FUNCTION reset color of grid 
@@ -29,14 +26,14 @@ function reset () {
 //FUNCTION reset size of grid depending on input
 function resize () {
     const size = document.querySelector('#resize');
-    if (size.value >= 1 || size.value <= 100) {
-        drawGrid(size.value);
+    if (parseInt(size.value) <= 100) {
+        drawGrid(parseInt(size.value));
         size.value = '';
     } else {
-        alert('enter a size between 1 to 100');
+        alert('Please enter a size between 1 to 100');
         return;
     }
-    console.log(size.value);
+
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
@@ -45,7 +42,7 @@ function changeColor() {
 }
 
 //FUNCTION new paint color 
-function rainbowColor() {
+function randomColor() {
     let num = Math.floor((Math.random()*255));
     let num2 = Math.floor((Math.random()*255));
     let num3 = Math.floor((Math.random()*255));
