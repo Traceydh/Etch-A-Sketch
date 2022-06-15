@@ -17,8 +17,7 @@ function reset () {
 //FUNCTION pop up asking for user input to restart grid 
 function resize () {
     const size = document.querySelector('#resize');
-    console.log (size.value);
-    //rawGrid(size);
+    drawGrid(size.value);
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
