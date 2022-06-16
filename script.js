@@ -6,6 +6,27 @@ let paintColor = 'salmon';
 let backgroundColor = 'black';
 drawGrid(16);
 
+//FUNCTION draw and color grid 
+function drawGrid (size) {
+    if (size < 1 ) {
+        alert('Please enter a size between 1 to 100');
+        return;
+    }
+    //Column and row sizing
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    //create grid div elements 
+    for (let i = 0; i < size*size; i ++) {
+        //create element in memory for the div 
+        let grid = document.createElement('div');
+        grid.style.backgroundColor = backgroundColor;
+        //Append newly created grid element to the container div in HTML file 
+        container.append(grid);
+        //when mouse hovers over a div, change it's background color 
+        grid.addEventListener('mouseover', changeColor);
+    }
+}
+
 //resize grid when button is clicked 
 const resizeButton = document.querySelector('.resize-btn');
 resizeButton.onclick = resize; 
@@ -15,7 +36,9 @@ resetButton.onclick = reset;
 //Change paint color 
 const randomColorButton = document.querySelector('.color-btn')
 randomColorButton.onclick = randomColor; 
-
+//Change to rainbow color 
+const rainbowColorButton = document.querySelector('.rainbow-color-btn')
+rainbowColorButton.onclick = rainbowColor; 
 
 //FUNCTION reset color of grid 
 function reset () {
@@ -25,15 +48,20 @@ function reset () {
 
 //FUNCTION reset size of grid depending on input
 function resize () {
+    //Select all previously made div elements 
+    let grid = container.querySelectorAll('div');
+    //for each div element, pass a function which removes it 
+    grid.forEach((div) => div.remove());
+    //get user input as variable into JS
     const size = document.querySelector('#resize');
     if (parseInt(size.value) <= 100) {
+        //redraw the div elements with value form user input 
         drawGrid(parseInt(size.value));
         size.value = '';
     } else {
-        alert('Please enter a size between 1 to 100');
+        alert('Please enter a size between 1 to 100 nn');
         return;
     }
-
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
@@ -49,25 +77,7 @@ function randomColor() {
     paintColor = `rgb(${num}, ${num2}, ${num3})`;
 }
 
-//FUNCTION draw and color grid 
-function drawGrid (size) {
-    if (size < 1 ) {
-        alert('Please enter a size between 1 to 100');
-        return;
-    }
-    //Column and row sizing
-    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    //Remove previous grid colors
-    let grid = container.querySelectorAll('div');
-    grid.forEach((div) => div.remove());
-    for (let i = 0; i < size*size; i ++) {
-        //create element in memory for the div 
-        let grid = document.createElement('div');
-        grid.style.backgroundColor = backgroundColor;
-        //Append newly created grid element to the container div in HTML file 
-        container.append(grid);
-        //when mouse hovers over a div, change it's background color 
-        grid.addEventListener('mouseover', changeColor);
-    }
+//FUNCTION rainbow paint 
+function rainbowColor() {
 }
+
