@@ -2,7 +2,7 @@
 //Select container element from HTML file 
 const container = document.querySelector('.container');
 //set color of grid as variable 
-let paintColor = 'salmon';
+let paintColor = 'red';
 let backgroundColor = 'black';
 drawGrid(16);
 
@@ -49,10 +49,8 @@ const rainbowColorButton = document.querySelector('.rainbow-color-btn');
 rainbowColorButton.onclick = () => paintColor = 'random';
 //get all color-btn
 const colorButtons = document.querySelectorAll('.color-btn');
-colorButtons.forEach(
-    function(button) {
-    button.onclick = () => paintColor = button.value;
-});
+//change paintColor to the same color as button clicked 
+colorButtons.forEach( button => button.onclick = () => paintColor = button.value);
 
 
 

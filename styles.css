@@ -47,12 +47,22 @@ button {
     font-size: 15px;
 
 }
-
+button[value=red] {
+    background-color: red;
+}
+button[value=green] {
+    background-color: green;
+}
+button[value=blue] {
+    background-color: blue;
+}
 button:hover {
     background-color: white;
     color: black;
     transition: 0.2s;
 }
+
+
 
 .rainbow-color-btn {
     background: linear-gradient(
