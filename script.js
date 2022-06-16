@@ -47,6 +47,13 @@ randomColorButton.onclick = randomColor;
 //get rainbow button 
 const rainbowColorButton = document.querySelector('.rainbow-color-btn');
 rainbowColorButton.onclick = () => paintColor = 'random';
+//get all color-btn
+const colorButtons = document.querySelectorAll('.color-btn');
+console.log(colorButtons);
+colorButtons.forEach(function(button) {
+    button.onclick = () => console.log('click');
+});
+
 
 
 //FUNCTION reset color of grid 
@@ -78,4 +85,15 @@ function changeColor() {
     this.style.backgroundColor = paintColor;
 }
 
+//if rainbow button is clicked
+//when mouse is hovering over the background, constantly change background color 
+
+
+//FUNCTION new paint color 
+function randomColor() {
+    let num = Math.floor((Math.random()*255));
+    let num2 = Math.floor((Math.random()*255));
+    let num3 = Math.floor((Math.random()*255));
+    paintColor = `rgb(${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))})`;
+}
 
