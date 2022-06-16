@@ -6,6 +6,13 @@ let paintColor = 'salmon';
 let backgroundColor = 'black';
 drawGrid(16);
 
+const rainbowColorButton = document.querySelector('.rainbow-color-btn');
+console.log(rainbowColorButton);
+rainbowColorButton.onclick = function() {
+    paintColor = 'random';
+};
+
+
 //FUNCTION draw and color grid 
 function drawGrid (size) {
     if (size < 1 ) {
@@ -40,9 +47,7 @@ resetButton.onclick = reset;
 //Change to random paint color 
 const randomColorButton = document.querySelector('.random-color-btn')
 randomColorButton.onclick = randomColor; 
-//Change to rainbow color 
-const rainbowColorButton = document.querySelector('.rainbow-color-btn')
-rainbowColorButton.onclick = rainbowColor; 
+
 
 //FUNCTION reset color of grid 
 function reset () {
@@ -67,8 +72,17 @@ function resize () {
 
 //FUNCTION change color of grid when mouse is hovering over 
 function changeColor() {
+    if (paintColor === 'random') {
+        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+    }
     this.style.backgroundColor = paintColor;
 }
+function rainbowColor() {
+    this.style.backgroundColor = paintColor;
+}
+
+//if rainbow button is clicked
+//when mouse is hovering over the background, constantly change background color 
 
 
 //FUNCTION new paint color 
@@ -81,5 +95,6 @@ function randomColor() {
 
 //FUNCTION rainbow paint 
 function rainbowColor() {
+    this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
 }
 
