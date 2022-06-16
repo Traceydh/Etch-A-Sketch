@@ -6,11 +6,8 @@ let paintColor = 'salmon';
 let backgroundColor = 'black';
 drawGrid(16);
 
-const rainbowColorButton = document.querySelector('.rainbow-color-btn');
-console.log(rainbowColorButton);
-rainbowColorButton.onclick = function() {
-    paintColor = 'random';
-};
+
+
 
 
 //FUNCTION draw and color grid 
@@ -47,6 +44,9 @@ resetButton.onclick = reset;
 //Change to random paint color 
 const randomColorButton = document.querySelector('.random-color-btn')
 randomColorButton.onclick = randomColor; 
+//get rainbow button 
+const rainbowColorButton = document.querySelector('.rainbow-color-btn');
+rainbowColorButton.onclick = () => paintColor = 'random';
 
 
 //FUNCTION reset color of grid 
@@ -73,28 +73,9 @@ function resize () {
 //FUNCTION change color of grid when mouse is hovering over 
 function changeColor() {
     if (paintColor === 'random') {
-        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+        this.style.backgroundColor = `rgb(${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))})`;
     }
     this.style.backgroundColor = paintColor;
 }
-function rainbowColor() {
-    this.style.backgroundColor = paintColor;
-}
 
-//if rainbow button is clicked
-//when mouse is hovering over the background, constantly change background color 
-
-
-//FUNCTION new paint color 
-function randomColor() {
-    let num = Math.floor((Math.random()*255));
-    let num2 = Math.floor((Math.random()*255));
-    let num3 = Math.floor((Math.random()*255));
-    paintColor = `rgb(${num}, ${num2}, ${num3})`;
-}
-
-//FUNCTION rainbow paint 
-function rainbowColor() {
-    this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
-}
 
