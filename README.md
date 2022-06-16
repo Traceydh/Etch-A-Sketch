@@ -8,6 +8,7 @@ This project was quite challenging in the beginning. After completing it I now h
 - how psuedo code/explaining what I'm trying to do out loud can help highlight points of error
 - problem solving skills
 - how callback functions operate
+- how to update page on Github after editing files
 
 Future improvement to game
 - implement color wheel so any color can be chosen 
