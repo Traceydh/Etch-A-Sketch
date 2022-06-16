@@ -13,3 +13,4 @@ This project was quite challenging in the beginning. After completing it I now h
 Future improvement to game
 - implement color wheel so any color can be chosen 
 - implement slider for grid size 
+- only draw when clicked 
