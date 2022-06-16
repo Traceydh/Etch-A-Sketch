@@ -51,7 +51,7 @@ rainbowColorButton.onclick = () => paintColor = 'random';
 const colorButtons = document.querySelectorAll('.color-btn');
 colorButtons.forEach(
     function(button) {
-    button.onclick = () => console.log(button.value);
+    button.onclick = () => paintColor = button.value;
 });
 
 
