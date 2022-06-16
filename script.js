@@ -6,10 +6,6 @@ let paintColor = 'red';
 let backgroundColor = 'black';
 drawGrid(16);
 
-
-
-
-
 //FUNCTION draw and color grid 
 function drawGrid (size) {
     if (size < 1 ) {
@@ -52,8 +48,6 @@ const colorButtons = document.querySelectorAll('.color-btn');
 //change paintColor to the same color as button clicked 
 colorButtons.forEach( button => button.onclick = () => paintColor = button.value);
 
-
-
 //FUNCTION reset color of grid 
 function reset () {
     let grid = container.querySelectorAll('div');
@@ -82,10 +76,6 @@ function changeColor() {
     }
     this.style.backgroundColor = paintColor;
 }
-
-//if rainbow button is clicked
-//when mouse is hovering over the background, constantly change background color 
-
 
 //FUNCTION new paint color 
 function randomColor() {
