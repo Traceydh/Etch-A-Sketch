@@ -48,13 +48,14 @@ function reset () {
 
 //FUNCTION reset size of grid depending on input
 function resize () {
-    //Select all previously made div elements 
-    let grid = container.querySelectorAll('div');
-    //for each div element, pass a function which removes it 
-    grid.forEach((div) => div.remove());
     //get user input as variable into JS
     const size = document.querySelector('#resize');
     if (parseInt(size.value) <= 100) {
+        console.log(size.value);
+        //Select all previously made div elements 
+        let grid = container.querySelectorAll('div');
+        //for each div element, pass a function which removes it 
+        grid.forEach((div) => div.remove());
         //redraw the div elements with value form user input 
         drawGrid(parseInt(size.value));
         size.value = '';
