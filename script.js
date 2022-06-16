@@ -15,6 +15,10 @@ function drawGrid (size) {
     //Column and row sizing
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    //Select all previously made div elements 
+    let grid = container.querySelectorAll('div');
+    //for each div element, pass a function which removes it 
+    grid.forEach((div) => div.remove());
     //create grid div elements 
     for (let i = 0; i < size*size; i ++) {
         //create element in memory for the div 
@@ -33,9 +37,12 @@ resizeButton.onclick = resize;
 //reset color of grid when button is clicked 
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onclick = reset; 
-//Change paint color 
-const randomColorButton = document.querySelector('.color-btn')
+//Change to random paint color 
+const randomColorButton = document.querySelector('.random-color-btn')
 randomColorButton.onclick = randomColor; 
+//change to selected paint color 
+const colorButton = document.querySelectorAll('.color-btn');
+colorButton.forEach((button) => button.addEventListener('click', selectColor));
 //Change to rainbow color 
 const rainbowColorButton = document.querySelector('.rainbow-color-btn')
 rainbowColorButton.onclick = rainbowColor; 
@@ -51,11 +58,7 @@ function resize () {
     //get user input as variable into JS
     const size = document.querySelector('#resize');
     if (parseInt(size.value) <= 100) {
-        console.log(size.value);
-        //Select all previously made div elements 
-        let grid = container.querySelectorAll('div');
-        //for each div element, pass a function which removes it 
-        grid.forEach((div) => div.remove());
+        console.log(size.value < 0);
         //redraw the div elements with value form user input 
         drawGrid(parseInt(size.value));
         size.value = '';
@@ -68,6 +71,11 @@ function resize () {
 //FUNCTION change color of grid when mouse is hovering over 
 function changeColor() {
     this.style.backgroundColor = paintColor;
+}
+
+//FUNCTION select color 
+function selectColor() {
+    console.log(colorButton);
 }
 
 //FUNCTION new paint color 
