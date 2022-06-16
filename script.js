@@ -40,9 +40,6 @@ resetButton.onclick = reset;
 //Change to random paint color 
 const randomColorButton = document.querySelector('.random-color-btn')
 randomColorButton.onclick = randomColor; 
-//change to selected paint color 
-const colorButton = document.querySelectorAll('.color-btn');
-colorButton.forEach((button) => button.addEventListener('click', selectColor));
 //Change to rainbow color 
 const rainbowColorButton = document.querySelector('.rainbow-color-btn')
 rainbowColorButton.onclick = rainbowColor; 
@@ -73,10 +70,6 @@ function changeColor() {
     this.style.backgroundColor = paintColor;
 }
 
-//FUNCTION select color 
-function selectColor() {
-    console.log(colorButton);
-}
 
 //FUNCTION new paint color 
 function randomColor() {
