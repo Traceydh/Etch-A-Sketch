@@ -22,6 +22,15 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
 }
+
+#color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 100px;
+    width: 100px;
+}
+
 .container {
     width: 500px;
     height: 500px;
