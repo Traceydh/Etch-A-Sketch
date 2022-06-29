@@ -51,10 +51,6 @@ randomColorButton.onclick = randomColor;
 //get rainbow button 
 const rainbowColorButton = document.querySelector('.rainbow-color-btn');
 rainbowColorButton.onclick = () => paintColor = 'random';
-//get all color-btn
-const colorButtons = document.querySelectorAll('.color-btn');
-//change paintColor to the same color as button clicked 
-colorButtons.forEach( button => button.onclick = () => paintColor = button.value);
 //get color button 
 const colourButton = document.querySelector('.colour');
 colourButton.onclick = () => paintColor = colourSelector.value;
