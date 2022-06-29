@@ -3,10 +3,8 @@
 const container = document.querySelector('.container');
 //Select input color
 const colourSelector = document.querySelector('#color');
-
-
 //set color of grid as variable 
-let paintColor = 'red';
+let paintColor = colourSelector.value;
 let backgroundColor = 'black';
 drawGrid(16);
 
@@ -57,7 +55,9 @@ rainbowColorButton.onclick = () => paintColor = 'random';
 const colorButtons = document.querySelectorAll('.color-btn');
 //change paintColor to the same color as button clicked 
 colorButtons.forEach( button => button.onclick = () => paintColor = button.value);
-
+//get color button 
+const colourButton = document.querySelector('.colour');
+colourButton.onclick = () => paintColor = colourSelector.value;
 
 //FUNCTION reset color of grid 
 function reset () {
