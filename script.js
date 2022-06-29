@@ -40,6 +40,13 @@ function drawGrid (size) {
         //when mouse is clicked or helddown and dragged change color
         grid.addEventListener('mouseover', changeColor);
         grid.addEventListener('mousedown', changeColor);
+        //stop user from dragging divs
+        grid.addEventListener('dragstart', (e) => {
+            e.preventDefault()
+          })
+        grid.addEventListener('drop', (e) => {
+            e.preventDefault()
+          })
     }
 }
 
@@ -56,12 +63,14 @@ resizeSlider.addEventListener('input', () => {
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onclick = reset; 
 //Change to random paint color 
-const randomColorButton = document.querySelector('.random-color-btn')
+const randomColorButton = document.querySelector('.random-color-btn');
 randomColorButton.onclick = randomColor; 
 //get rainbow button 
 const rainbowColorButton = document.querySelector('.rainbow-color-btn');
 rainbowColorButton.onclick = () => paintColor = 'random';
-
+//eraser button 
+const eraserButton = document.querySelector('.eraser-btn');
+eraserButton.onclick = () => paintColor = backgroundColor; 
 //FUNCTION reset color of grid 
 function reset () {
     let grid = container.querySelectorAll('div');
@@ -71,7 +80,7 @@ function reset () {
 //FUNCTION change color of grid when mouse is hovering over 
 function changeColor(e) {
     //do not paint when mouse is not held down 
-    if (e.type === 'mouseover' && !mouseDown) {
+    if (mouseDown == false && e.type === 'mouseover') {
         return
     }
 

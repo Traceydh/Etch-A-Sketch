@@ -101,6 +101,11 @@ button:hover {
     transition: 0.2s;
 }
 
+input[type="color"]:hover {
+    transform:scale(1.1);
+    transition: 0.2s;
+}
+
 .rainbow-color-btn {
     background: linear-gradient(
         90deg,
