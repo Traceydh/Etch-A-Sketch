@@ -14,3 +14,5 @@ Future improvement to game
 - implement color wheel so any color can be chosen 
 - implement slider for grid size 
 - only draw when clicked 
+
+Check out the live demo [here](https://traceydh.github.io/Etch-A-Sketch/)
