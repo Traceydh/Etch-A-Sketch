@@ -39,6 +39,16 @@ function drawGrid (size) {
     }
 }
 
+//resize grid when slider is dragged and released
+const resizeSlider = document.querySelector("#resize2");
+const resizeOutput = document.querySelector(".resize-output");
+resizeOutput.textContent = resizeSlider.value + " x " + resizeSlider.value;
+resizeSlider.addEventListener('input', () => {
+    resizeOutput.textContent = resizeSlider.value + " x " + resizeSlider.value;
+    drawGrid(resizeSlider.value);
+})
+
+
 //resize grid when button is clicked 
 const resizeButton = document.querySelector('.resize-btn');
 resizeButton.onclick = resize; 
@@ -59,20 +69,6 @@ colourButton.onclick = () => paintColor = colourSelector.value;
 function reset () {
     let grid = container.querySelectorAll('div');
     grid.forEach((div) => div.style.backgroundColor = backgroundColor);
-}
-
-//FUNCTION reset size of grid depending on input
-function resize () {
-    //get user input as variable into JS
-    const size = document.querySelector('#resize');
-    if (parseInt(size.value) <= 100) {
-        //redraw the div elements with value form user input 
-        drawGrid(parseInt(size.value));
-        size.value = '';
-    } else {
-        alert('Please enter a size between 1 to 100 nn');
-        return;
-    }
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
