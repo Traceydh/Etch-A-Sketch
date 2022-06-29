@@ -1,6 +1,10 @@
 //create a webpage with 16x16 grid of square divs 
 //Select container element from HTML file 
 const container = document.querySelector('.container');
+//Select input color
+const colourSelector = document.querySelector('#color');
+
+
 //set color of grid as variable 
 let paintColor = 'red';
 let backgroundColor = 'black';
@@ -53,6 +57,7 @@ rainbowColorButton.onclick = () => paintColor = 'random';
 const colorButtons = document.querySelectorAll('.color-btn');
 //change paintColor to the same color as button clicked 
 colorButtons.forEach( button => button.onclick = () => paintColor = button.value);
+
 
 //FUNCTION reset color of grid 
 function reset () {
