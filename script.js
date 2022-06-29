@@ -6,6 +6,7 @@ let paintColor = 'red';
 let backgroundColor = 'black';
 drawGrid(16);
 
+//Set variable to detect if mouse is held down or up 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -30,7 +31,7 @@ function drawGrid (size) {
         grid.style.backgroundColor = backgroundColor;
         //Append newly created grid element to the container div in HTML file 
         container.append(grid);
-        //when mouse hovers over a div, change it's background color 
+        //when mouse is clicked or helddown and dragged change color
         grid.addEventListener('mouseover', changeColor);
         grid.addEventListener('mousedown', changeColor);
     }
@@ -75,7 +76,7 @@ function resize () {
 
 //FUNCTION change color of grid when mouse is hovering over 
 function changeColor(e) {
-    console.log(mouseDown);
+    //do not paint when mouse is not held down 
     if (e.type === 'mouseover' && !mouseDown) {
         return
     }
@@ -88,9 +89,6 @@ function changeColor(e) {
 
 //FUNCTION new paint color 
 function randomColor() {
-    let num = Math.floor((Math.random()*255));
-    let num2 = Math.floor((Math.random()*255));
-    let num3 = Math.floor((Math.random()*255));
     paintColor = `rgb(${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))})`;
 }
 
