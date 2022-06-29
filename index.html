@@ -10,29 +10,27 @@
 
     <body>
         <div class="content">
-            <h1>Sketch Pad</h1>
+            <h1>Etch-A-Sketch</h1>
             <div class="controls">
                 <div class="middle">
                     <div class="colors">
                         <div class="filter">
-                            <input type="color" id="color" name="color" value="#808080">
-                            <button class="colour">Pick Colour</button>
+                            <input type="color" id="color" name="color" value="#FF8C8C">
+                            <button class="colour">Pick a colour</button>
                         </div>
                         
                         <button class="random-color-btn">Surprise me!</button>
                         <button class="rainbow-color-btn">Rainbow</button>
-                    </div>
-                    <div class="container"></div>
-                </div>
-                <div class="buttons">
-                    <div>
-                        <div>
-                            <label for="resize2">Resize Grid</label>
-                            <input type="range" min="1" max="100" step="1" value="16" id="resize2">
+                        <button class="reset-btn">Reset</button>
+                        <div class="slider">
                             <output class="resize-output" for="resize2"></output>
+                            <input type="range" min="1" max="100" step="1" value="16" id="resize2">
+                            <label for="resize2">Resize Grid</label>
                         </div>
                     </div>
-                    <button class="reset-btn">Reset</button>
+                    <div class="border">
+                        <div class="container"></div>
+                    </div>
                 </div>
             </div>
         </div>

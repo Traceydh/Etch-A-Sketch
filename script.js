@@ -5,7 +5,7 @@ const container = document.querySelector('.container');
 const colourSelector = document.querySelector('#color');
 //set color of grid as variable 
 let paintColor = colourSelector.value;
-let backgroundColor = 'black';
+let backgroundColor = 'white';
 drawGrid(16);
 
 //Set variable to detect if mouse is held down or up 

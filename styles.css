@@ -1,11 +1,25 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    background-color: rgb(228, 224, 224);
+    background-color: #FFE3A9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c54141;
 }
 h1 {
     margin-top: 10vh;
     font-size: 45px;
+}
+
+.border {
+    background-color: red;
+    height: 625px;
+    width: 625px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
 }
 
 .controls {
@@ -16,12 +30,13 @@ h1 {
 .middle {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 .colors {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .filter {
@@ -34,20 +49,21 @@ h1 {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     border: none;
     background-color: transparent;
+    margin: 0 auto;
 }
 /*WebKit browser engine*/
 #color::-webkit-color-swatch {
     border-radius: 100px;
-    border: 2px solid black;
+    border: none;
 }
 /*Gecko (Firefox)*/
 #color::-moz-color-swatch {
     border-radius: 100px;
-    border: 2px solid black;
+    border: none;
 }
 
 .container {
@@ -69,34 +85,19 @@ input {
     justify-content: center;
 }
 
-.buttons {
-    margin-top: 30px;
-    margin-left: 130px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
 button {
-    background-color: black;
+    background-color: #c54141;
     color: white;
     border-radius: 8px;
     padding: 10px 15px;
     font-size: 15px;
+    border-style: none;
+    border-color: none;
 
 }
-button[value=red] {
-    background-color: red;
-}
-button[value=green] {
-    background-color: green;
-}
-button[value=blue] {
-    background-color: blue;
-}
+
 button:hover {
-    background-color: white;
-    color: black;
+    opacity: 60%;
     transition: 0.2s;
 }
 
@@ -117,3 +118,42 @@ button:hover {
     );
     transition: 0.7;
 }
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resize2 {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+}
+
+/***** Slider *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #FF8C8C;
+    height: 0.5rem;
+    border-radius: 5px;
+  }
+  /******** Firefox ********/
+  input[type="range"]::-moz-range-track {
+    background: #FF8C8C;
+    height: 0.5rem;
+    border-radius: 5px;
+  }
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -5px; /* Centers thumb on the track */
+    background-color: #c54141;
+    height: 1.2rem;
+    width: 1.2rem;    
+    border-radius: 10px;
+ }
