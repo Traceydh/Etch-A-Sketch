@@ -6,9 +6,13 @@ let paintColor = 'red';
 let backgroundColor = 'black';
 drawGrid(16);
 
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
 //FUNCTION draw and color grid 
 function drawGrid (size) {
-    if (size < 1 ) {
+    if (size < 1) {
         alert('Please enter a size between 1 to 100');
         return;
     }
@@ -28,6 +32,7 @@ function drawGrid (size) {
         container.append(grid);
         //when mouse hovers over a div, change it's background color 
         grid.addEventListener('mouseover', changeColor);
+        grid.addEventListener('mousedown', changeColor);
     }
 }
 
@@ -59,7 +64,6 @@ function resize () {
     //get user input as variable into JS
     const size = document.querySelector('#resize');
     if (parseInt(size.value) <= 100) {
-        console.log(size.value < 0);
         //redraw the div elements with value form user input 
         drawGrid(parseInt(size.value));
         size.value = '';
@@ -70,7 +74,12 @@ function resize () {
 }
 
 //FUNCTION change color of grid when mouse is hovering over 
-function changeColor() {
+function changeColor(e) {
+    console.log(mouseDown);
+    if (e.type === 'mouseover' && !mouseDown) {
+        return
+    }
+
     if (paintColor === 'random') {
         this.style.backgroundColor = `rgb(${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))}, ${Math.floor((Math.random()*255))})`;
     }
