@@ -3,6 +3,9 @@
 const container = document.querySelector('.container');
 //Select input color
 const colourSelector = document.querySelector('#color');
+colourSelector.addEventListener('input', () => {
+    paintColor = colourSelector.value;
+})
 //set color of grid as variable 
 let paintColor = colourSelector.value;
 let backgroundColor = 'white';
@@ -48,10 +51,6 @@ resizeSlider.addEventListener('input', () => {
     drawGrid(resizeSlider.value);
 })
 
-
-//resize grid when button is clicked 
-const resizeButton = document.querySelector('.resize-btn');
-resizeButton.onclick = resize; 
 //reset color of grid when button is clicked 
 const resetButton = document.querySelector('.reset-btn');
 resetButton.onclick = reset; 
