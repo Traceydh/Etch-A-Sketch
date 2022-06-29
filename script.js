@@ -3,6 +3,7 @@
 const container = document.querySelector('.container');
 //Select input color
 const colourSelector = document.querySelector('#color');
+//when user selects new color, change paint color 
 colourSelector.addEventListener('input', () => {
     paintColor = colourSelector.value;
 })
@@ -60,9 +61,6 @@ randomColorButton.onclick = randomColor;
 //get rainbow button 
 const rainbowColorButton = document.querySelector('.rainbow-color-btn');
 rainbowColorButton.onclick = () => paintColor = 'random';
-//get color button 
-const colourButton = document.querySelector('.colour');
-colourButton.onclick = () => paintColor = colourSelector.value;
 
 //FUNCTION reset color of grid 
 function reset () {
