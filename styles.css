@@ -20,15 +20,34 @@ h1 {
 .colors {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #color {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
+    border: none;
+    background-color: transparent;
+}
+/*WebKit browser engine*/
+#color::-webkit-color-swatch {
+    border-radius: 100px;
+    border: 2px solid black;
+}
+/*Gecko (Firefox)*/
+#color::-moz-color-swatch {
+    border-radius: 100px;
+    border: 2px solid black;
 }
 
 .container {
@@ -52,6 +71,7 @@ input {
 
 .buttons {
     margin-top: 30px;
+    margin-left: 130px;
     display: flex;
     justify-content: center;
     gap: 20px;
